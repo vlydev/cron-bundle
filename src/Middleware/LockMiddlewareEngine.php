@@ -6,11 +6,11 @@ namespace Okvpn\Bundle\CronBundle\Middleware;
 
 use Okvpn\Bundle\CronBundle\Model\LockStamp;
 use Okvpn\Bundle\CronBundle\Model\ScheduleEnvelope;
-use Symfony\Component\Lock\Factory as LockFactory;
+use Symfony\Component\Lock\LockFactory;
 
 final class LockMiddlewareEngine implements MiddlewareEngineInterface
 {
-    /** @var mixed|\Symfony\Component\Lock\LockFactory */
+    /** @var LockFactory|null */
     private $factory;
 
     public function __construct($factory = null)
