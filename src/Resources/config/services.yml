@@ -86,12 +86,12 @@ services:
     okvpn_cron.loader_default:
         class: Okvpn\Bundle\CronBundle\Loader\ScheduleLoader
         arguments:
-            - !tagged okvpn_cron.loader
+            - !tagged_iterator okvpn_cron.loader
 
     okvpn_cron.runner_default:
         class: Okvpn\Bundle\CronBundle\Runner\ScheduleRunner
         arguments:
-            - !tagged okvpn_cron.middleware
+            - !tagged_iterator okvpn_cron.middleware
 
     Okvpn\Bundle\CronBundle\Runner\TimerStorage: ~
 
